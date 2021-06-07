@@ -1,0 +1,24 @@
+.login-btn {
+    background-color: darkkhaki;
+    border: 1px solid khaki;
+    border-radius: 35px;
+    width: 350px;
+    padding:10px 15px;
+    margin: 0 40%;
+    font-weight: bolder;
+    color: darkslategray;
+}
+
+.login-btn:hover {
+    background-color: rgb(230, 219, 120);
+}
+
+.login-btn img {
+    height: 50px;
+    margin: 0 10px;
+}
+
+.logged-user{
+    text-align: center;
+    color: darkslategray;
+}

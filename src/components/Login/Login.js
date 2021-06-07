@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
+import './Login.css';
+import Icon from '../../images/google-icon.png';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
@@ -22,7 +24,6 @@ const Login = () => {
             .signInWithPopup(provider)
             .then((result) => {
                 // console.log(result);
-                console.log(result.user.email, result.user.displayName);
                 const signedInnUser = {
                     name: result.user.displayName,
                     email: result.user.email,
@@ -37,10 +38,11 @@ const Login = () => {
 
     return (
         <div style={{ marginTop: "300px" }}>
-            <h1>this is login page</h1>
-            {/* <button onClick={handleGoogleSignIn}>Sign in Using Google</button> */}
             {
-                user.isSignedIn === false ? <button onClick={handleGoogleSignIn}>Sign in Using Google</button> : <h4>Welcome {user.name}</h4>
+                user.isSignedIn === false ?
+                    <button className='login-btn' onClick={handleGoogleSignIn}> <img src={Icon} alt="" /> Sign in Using Google</button>
+                    :
+                    <h4 className='logged-user'>Welcome {user.name}</h4>
             }
         </div>
     );
