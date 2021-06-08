@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='fixed-top'>
+        <div>
             <nav className='navbar navbar-expand-md navbar-light bg-light'>
                 <div className="container">
                     {/* <img className='navbar-brand logo' src={Logo} alt="" /> */}
@@ -26,3 +26,5 @@ const Header = () => {
 };
 
 export default Header;
+
+//  className='fixed-top'

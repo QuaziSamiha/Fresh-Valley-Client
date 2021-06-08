@@ -37,7 +37,7 @@ const Login = () => {
     }
 
     return (
-        <div style={{ marginTop: "300px" }}>
+        <div>
             {
                 user.isSignedIn === false ?
                     <button className='login-btn' onClick={handleGoogleSignIn}> <img src={Icon} alt="" /> Sign in Using Google</button>

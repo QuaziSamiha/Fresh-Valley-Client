@@ -1,0 +1,15 @@
+.admin-section {
+    display: flex;
+}
+
+.admin-sidebar {
+    background-color: darkslategray;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    color: floralwhite;
+}
+
+.product{
+    margin: 5% 10%;
+}
