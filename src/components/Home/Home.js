@@ -17,14 +17,12 @@ const Home = () => {
 
     return (
         <div className='all-products m-4'>
-            {/* <h1>this is home...</h1> */}
-            {
-                products.map((product, index) => <Product key={index} product={product}></Product>)
-            }
+                    {
+                        products.map((product, index) => <Product key={index} product={product}></Product>)
+                    }
+                
         </div>
     );
 };
 
 export default Home;
-
-//  style={{marginTop:"300px"}}
