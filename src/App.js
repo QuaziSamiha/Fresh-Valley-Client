@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import CheckOut from './components/CheckOut/CheckOut';
 
 export const UserContext = createContext();
 
@@ -23,7 +24,10 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <PrivateRoute path="/orders">
+          <PrivateRoute path='/checkOut'>
+            <CheckOut />
+          </PrivateRoute>
+          <PrivateRoute path="/orders/:productId">
             <Orders />
           </PrivateRoute>
           <PrivateRoute path="/admin">
@@ -32,9 +36,6 @@ function App() {
           <Route path='/login'>
             <Login />
           </Route>
-          {/* <PrivateRoute path='/checkOut'>
-            <CheckOut />
-          </PrivateRoute> */}
           <Route exact path="/">
             <Home />
           </Route>

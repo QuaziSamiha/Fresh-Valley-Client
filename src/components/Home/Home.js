@@ -10,17 +10,16 @@ const Home = () => {
         fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setProducts(data)
             })
     }, [])
 
     return (
-        <div className='all-products m-4'>
-                    {
-                        products.map((product, index) => <Product key={index} product={product}></Product>)
-                    }
-                
+        <div className='m-4 row'>
+            {
+                products.map((product, index) => <Product key={index} product={product}></Product>)
+            }
         </div>
     );
 };

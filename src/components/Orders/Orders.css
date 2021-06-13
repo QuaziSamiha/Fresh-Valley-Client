@@ -1,0 +1,12 @@
+.ordered-product {
+    width: 50%;
+    border: darkolivegreen solid 1px;
+    box-shadow: darkolivegreen 2px 3px 5px;
+    border-radius: 10px;
+    margin: 0 25%;
+}
+
+.ordered-product img {
+    height: 200px;
+    width: 200px;
+}

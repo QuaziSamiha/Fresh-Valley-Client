@@ -6,7 +6,6 @@ const PrivateRoute = ({ children, ...rest }) => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
-    // let auth = useAuth();
     return (
         <div>
             <Route

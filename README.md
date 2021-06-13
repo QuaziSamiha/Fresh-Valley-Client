@@ -5,7 +5,7 @@ https://github.com/Porgramming-Hero-web-course/full-stack-client-QuaziSamiha
 https://github.com/Porgramming-Hero-web-course/full-stack-server-QuaziSamiha
 
 # Home Page
-Home page will load data from database and display them. Here all kind of products, their price and a button to buy them will be shown. If a user clicked Buy Now button then either he will be moved  in Orders Page if he is already logged in or he will be moved Login Page. This page is not responsive till now.
+Home page will load data from database and display them. Here all kind of products, their price and a button to buy them will be shown. If a user clicked Buy Now button then either he will be moved  in Orders Page if he is already logged in or he will be moved Login Page.
 
 # Login Page
 In login page a user has to log in by their google account.
