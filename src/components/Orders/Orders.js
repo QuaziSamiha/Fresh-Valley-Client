@@ -17,10 +17,25 @@ const Orders = () => {
                 setOrderedProduct(data);
             })
     }, [productId])
-    console.log(orderedProduct);
+    // console.log(orderedProduct);
+
+    const orderDetail = { ...orderedProduct, ...loggedInUser};
+    delete orderDetail._id
+    console.log(orderDetail);
+
+    const url = `http://localhost:5000/addOrder`;
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(orderDetail)
+    })
+        .then(res => console.log('server side response'))
+
     return (
         <div className='text-center'>
-            <h2> Welcome {loggedInUser.name}!!!</h2>
+            <h2> Welcome {loggedInUser.userName}!!!</h2>
             <p>Your Order Product is:</p>
             <div className='ordered-product'>
                 <h4>Product Name: {orderedProduct.name}</h4>

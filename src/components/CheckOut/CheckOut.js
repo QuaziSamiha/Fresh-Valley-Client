@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
 import './CheckOut.css';
 
 const CheckOut = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/orderedProduct?email=' + loggedInUser.email)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setOrders(data);
+            })
+    }, [])
+
     return (
-        <div>
-            this is check out page...
+        <div className='text-center'>
+            <h4>Welcome {loggedInUser.useName}!!!</h4>
+            <p>You Have Ordered:</p>
+            <div>
+                {
+                    orders.map(order => <div className='ordered-product'>
+                        <h5>Product Name: {order.name}</h5>
+                        <p>Price: {order.price}</p>
+                        <img src={order.imageUrl} alt="" />
+                    </div>
+                    )
+                }
+            </div>
         </div>
     );
 };

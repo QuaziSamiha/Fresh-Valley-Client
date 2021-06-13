@@ -17,7 +17,7 @@ const Login = () => {
 
     const [user, setUser] = useState({
         isSignedIn: false,
-        name: '',
+        userName: '',
         email: ''
     });
 
@@ -32,7 +32,7 @@ const Login = () => {
             .then((result) => {
                 // console.log(result);
                 const signedInnUser = {
-                    name: result.user.displayName,
+                    userName: result.user.displayName,
                     email: result.user.email,
                     isSignedIn: true
                 }
@@ -51,7 +51,7 @@ const Login = () => {
                 user.isSignedIn === false ?
                     <button className='login-btn' onClick={handleGoogleSignIn}> <img src={Icon} alt="" /> Sign in Using Google</button>
                     :
-                    <h4 className='logged-user'>Welcome {user.name}</h4>
+                    <h4 className='logged-user'>Welcome {user.userName}</h4>
             }
         </div>
     );
