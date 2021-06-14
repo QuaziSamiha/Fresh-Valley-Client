@@ -15,8 +15,6 @@ const Admin = () => {
             imageUrl: imageURL
         }
 
-        // console.log(productData);
-
         const url = `http://localhost:5000/addProduct`;
         fetch(url, {
             method: 'POST',

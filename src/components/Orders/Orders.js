@@ -17,21 +17,22 @@ const Orders = () => {
                 setOrderedProduct(data);
             })
     }, [productId])
-    // console.log(orderedProduct);
 
-    const orderDetail = { ...orderedProduct, ...loggedInUser};
-    delete orderDetail._id
-    console.log(orderDetail);
+    const handleCheckOut = (product, user) => {
+        const orderedDetail = { ...product, ...user };
+        delete orderedDetail._id
 
-    const url = `http://localhost:5000/addOrder`;
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(orderDetail)
-    })
-        .then(res => console.log('server side response'))
+        const url = `http://localhost:5000/addOrder`;
+        
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderedDetail)
+        })
+            .then(res => console.log('server side response'))
+    };
 
     return (
         <div className='text-center'>
@@ -41,7 +42,7 @@ const Orders = () => {
                 <h4>Product Name: {orderedProduct.name}</h4>
                 <p>Price: {orderedProduct.price}</p>
                 <img src={orderedProduct.imageUrl} alt="" /> <br />
-                <button className='btn btn-success p-2 m-3'>Check Out</button>
+                <button onClick={() => handleCheckOut(orderedProduct, loggedInUser)} className='btn btn-success p-2 m-3'>Check Out</button>
             </div>
         </div>
     );

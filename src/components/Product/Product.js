@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     return (
-        <div className='col-lg-4'>
+        <div className='col-lg-4 pt-5'>
             <div className="card m-4" style={{ width: "18rem" }}>
                 <img src={product.imageUrl} className="card-img-top" alt="" />
                 <div className="card-body">

@@ -18,14 +18,15 @@ const CheckOut = () => {
 
     return (
         <div className='text-center'>
-            <h4>Welcome {loggedInUser.useName}!!!</h4>
+            <h4>Welcome {loggedInUser.userName}!!!</h4>
             <p>You Have Ordered:</p>
             <div>
                 {
                     orders.map(order => <div className='ordered-product'>
                         <h5>Product Name: {order.name}</h5>
                         <p>Price: {order.price}</p>
-                        <img src={order.imageUrl} alt="" />
+                        <img src={order.imageUrl} alt="" /> <br />
+                        <button className='btn btn-success p-2 m-4'>Place Order</button>
                     </div>
                     )
                 }

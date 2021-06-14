@@ -6,8 +6,9 @@
     background-color: darkslategray;
     width: 200px;
     height: 100vh;
-    padding: 20px;
+    padding: 70px 20px;
     color: floralwhite;
+    /* padding-top: 30px; */
 }
 
 .product{

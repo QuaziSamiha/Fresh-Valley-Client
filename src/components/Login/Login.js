@@ -30,7 +30,6 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                // console.log(result);
                 const signedInnUser = {
                     userName: result.user.displayName,
                     email: result.user.email,
